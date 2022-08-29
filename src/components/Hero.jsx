@@ -2,6 +2,9 @@ import React from 'react'
 import placeholder from '../images/placeholder.jpg'
 
 function Hero() {
+
+  var team1 = 'Falcons ';
+  var team2 = 'Hunters ';
   const topNfts = [
     {
         id: 1,
@@ -22,7 +25,17 @@ function Hero() {
         icon: placeholder,
     },
 ]
-
+    const liveGameStats = [
+    {
+        id:'CurrentGame',
+        name: 'Stats',
+        team1: team1,
+        team2: team2,
+        team1Score: null,
+        team2score: null,
+        currentHalf: null,
+    }
+]
 return (
     <div name='dashboard' className='flex relative w-[100%] justify-center '>
         <div id="mobileComps" className="mx-12 md:hidden flex flex-col w-5/6">
@@ -38,11 +51,38 @@ return (
                     </div>
                 ))}
             </div>
-            <div id='things' className=''>
+            <div id='mobileStats' className=''>
 
             </div>
         </div>
 
+        <div id="pcComps" className=" hidden md:flex mx-12 flex-col w-5/6">
+            <div name='topNfts' className="flex flex-row mt-8 justify-center ">
+                {topNfts.map(({ id, name, rank, icon }) => (
+                    <div key={id} className="flex flex-row w-40 py-2 mb-5 mx-12 h-60 rounded-xl bg-lightgraybg flex-wrap">
+                        <img src={icon} alt={name} className='w-12' />
+                        Name: <span>{name}</span>
+                        Ranking: <span>{rank}</span>
+                    </div>
+                ))}
+            </div>
+            
+            <div name='liveGameStats' className="px-32 py-24 h-32 mt-10 w-[30rem] bg-lightgraybg rounded-xl">
+                {liveGameStats.map(({team1, team2, team1Score, team2Score, currentHalf, id}) => (
+                    <div key={id} className="flex flex-wrap justify-center">
+                        team1: <span>{team1}</span>
+                        team2: <span>{team2}</span>
+                        team1Score: <span>{team1Score}</span>
+                        team2Score: <span>{team2Score}</span>
+                        currentHalf: <span>{currentHalf}</span>
+                    </div>
+                ))}
+            </div>
+            
+            <div id='pcStats' className=''>
+
+            </div>
+        </div>
 
     </div>
 )
