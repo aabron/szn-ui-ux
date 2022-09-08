@@ -115,14 +115,14 @@ return (
                 </div>
                 <div id='overallStats' className='inline-grid grid-rows-2 grid-cols-3'>
                     {overallStats.map(({id, name, value}) => (
-                        <div key={id} className='flex flex-grid my-5 h-24 ml-5 rounded-xl bg-lightgraybg flex-wrap'>
+                        <div key={id} className='flex flex-grid my-6 h-24 ml-5 rounded-xl bg-lightgraybg flex-wrap'>
                             Name: <span>{name}</span>
                             Value: <span>{value}</span>
                         </div>
                     ))}
                 </div>
             </div>
-            
+
             <div id='pcCalenderSocials'>
 
             </div>
