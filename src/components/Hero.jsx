@@ -123,8 +123,9 @@ return (
                 </div>
             </div>
 
-            <div id='pcCalenderSocials'>
+            <div id='pcCalenderSocials' className='flex flex-grid grid-cols-2'>
 
+            
             </div>
         </div>
 
