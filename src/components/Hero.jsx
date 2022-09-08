@@ -1,5 +1,6 @@
 import React from 'react'
 import placeholder from '../images/placeholder.jpg'
+//import Variables from './Variables.jsx'
 
 function Hero() {
 
@@ -27,14 +28,48 @@ function Hero() {
 ]
     const liveGameStats = [
     {
-        id:'CurrentGame',
-        name: 'Stats',
+        id:'CurrentGame ',
+        name: 'Stats ',
         team1: team1,
         team2: team2,
         team1Score: null,
         team2score: null,
         currentHalf: null,
     }
+]
+    const overallStats = [
+    {
+        id: 1,
+        name: "Total Wins",
+        value: null,
+
+    },
+    {
+        id:2,
+        name:"Total Losses",
+        value: null,
+    },
+    {
+        id:3,
+        name:"Games Played",
+        value: null
+    },
+    {
+        id:4,
+        name:"Overall Rank",
+        value: null,
+    },
+    {
+        id:5,
+        name: "LeaderBoard Position",
+        value: null,
+    },
+    {
+        id:6,
+        name: "Placeholder",
+        value: null
+    },
+
 ]
 return (
     <div name='dashboard' className='flex relative w-[100%] justify-center '>
@@ -66,20 +101,29 @@ return (
                     </div>
                 ))}
             </div>
-            
-            <div name='liveGameStats' className="px-32 py-24 h-32 mt-10 w-[30rem] bg-lightgraybg rounded-xl">
-                {liveGameStats.map(({team1, team2, team1Score, team2Score, currentHalf, id}) => (
-                    <div key={id} className="flex flex-wrap justify-center">
-                        team1: <span>{team1}</span>
-                        team2: <span>{team2}</span>
-                        team1Score: <span>{team1Score}</span>
-                        team2Score: <span>{team2Score}</span>
-                        currentHalf: <span>{currentHalf}</span>
-                    </div>
-                ))}
+            <div id='pcStats' className='inline-grid grid-cols-2'>
+                <div name='liveGameStats' className="px-32 py-24 h-32 mt-10 w-auto bg-lightgraybg rounded-xl">
+                    {liveGameStats.map(({team1, team2, team1Score, team2Score, currentHalf, id}) => (
+                        <div key={id} className="flex flex-wrap justify-center my-[-1.5rem]">
+                            team1: <span>{team1}</span>
+                            team2: <span>{team2}</span>
+                            team1Score: <span>{team1Score}</span>
+                            team2Score: <span>{team2Score}</span>
+                            currentHalf: <span>{currentHalf}</span>
+                        </div>
+                    ))}
+                </div>
+                <div id='overallStats' className='inline-grid grid-rows-2 grid-cols-3'>
+                    {overallStats.map(({id, name, value}) => (
+                        <div key={id} className='flex flex-grid my-5 h-24 ml-5 rounded-xl bg-lightgraybg flex-wrap'>
+                            Name: <span>{name}</span>
+                            Value: <span>{value}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
             
-            <div id='pcStats' className=''>
+            <div id='pcCalenderSocials'>
 
             </div>
         </div>
